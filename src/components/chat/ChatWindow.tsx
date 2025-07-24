@@ -24,8 +24,8 @@ interface ChatWindowProps {
 export const ChatWindow = ({ 
   isOpen, 
   onClose, 
-  title = "KI-Assistent", 
-  welcomeMessage = "Hallo! Wie kann ich Ihnen helfen?",
+  title = "Freund - KI von iurFRIEND", 
+  welcomeMessage = "Hallo, ich heiße \"Freund\" und bin die KI von iurFRIEND. Ich beantworte gerne alle Fragen zum Thema Trennung, Scheidung und Familienrecht.",
   className 
 }: ChatWindowProps) => {
   const [messages, setMessages] = useState<Message[]>([
@@ -60,18 +60,44 @@ export const ChatWindow = ({
     setMessages(prev => [...prev, newMessage]);
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
+    try {
+      // Call Flowise API
+      const response = await fetch('https://flowise.iurfriend.net/api/v1/prediction/55d57180-f5fc-459f-8869-6480b6645f21', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          question: content
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Netzwerkfehler bei der API-Anfrage');
+      }
+
+      const data = await response.json();
+      
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: `Das ist eine Beispielantwort auf: "${content}"\n\nDies ist ein Demo-Chat. In einer echten Implementierung würden Sie hier Ihre KI-API anbinden.`,
+        content: data.text || data.answer || 'Entschuldigung, ich konnte keine Antwort generieren.',
         isBot: true,
         timestamp: new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
       };
       
       setMessages(prev => [...prev, botResponse]);
+    } catch (error) {
+      console.error('Fehler beim Abrufen der API:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: 'Entschuldigung, es gab ein Problem bei der Verbindung zum Server. Bitte versuchen Sie es später erneut.',
+        isBot: true,
+        timestamp: new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   if (!isOpen) return null;

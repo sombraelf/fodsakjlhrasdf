@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 233 84% 58%;
+    --primary: 25 95% 63%; /* #fc9a3f */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 240 100% 80%;
+    --primary-glow: 25 95% 73%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -37,15 +37,15 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 233 84% 58%;
 
-    --chat-user-bg: 233 84% 58%;
+    --chat-user-bg: 25 95% 63%; /* Orange user messages */
     --chat-user-text: 0 0% 100%;
-    --chat-bot-bg: 210 40% 96.1%;
-    --chat-bot-text: 222.2 84% 4.9%;
-    --chat-widget-bg: 0 0% 100%;
+    --chat-bot-bg: 25 100% 95%; /* Very light orange for bot */
+    --chat-bot-text: 25 35% 25%; /* Dark text for contrast */
+    --chat-widget-bg: 25 100% 98%; /* Pastel orange background */
     --chat-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 
-    --gradient-primary: linear-gradient(135deg, hsl(233 84% 58%), hsl(240 100% 80%));
-    --gradient-chat: linear-gradient(135deg, hsl(233 84% 58%), hsl(245 58% 51%));
+    --gradient-primary: linear-gradient(135deg, hsl(25 95% 63%), hsl(25 95% 73%));
+    --gradient-chat: linear-gradient(135deg, hsl(25 95% 63%), hsl(25 100% 75%));
 
     --radius: 0.75rem;
 

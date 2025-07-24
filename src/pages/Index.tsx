@@ -76,8 +76,8 @@ const Index = () => {
 
       {/* Chat Widget */}
       <ChatWidget 
-        title="KI-Assistent"
-        welcomeMessage="Hallo! Willkommen bei unserem neuen KI-Chat Widget. Wie kann ich Ihnen helfen?"
+        title="Freund - KI von iurFRIEND"
+        welcomeMessage="Hallo, ich heiße &quot;Freund&quot; und bin die KI von iurFRIEND. Ich beantworte gerne alle Fragen zum Thema Trennung, Scheidung und Familienrecht."
         position="bottom-right"
       />
     </div>
