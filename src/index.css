@@ -17,8 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 233 84% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 240 100% 80%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -26,17 +27,27 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 233 84% 58%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 233 84% 58%;
 
-    --radius: 0.5rem;
+    --chat-user-bg: 233 84% 58%;
+    --chat-user-text: 0 0% 100%;
+    --chat-bot-bg: 210 40% 96.1%;
+    --chat-bot-text: 222.2 84% 4.9%;
+    --chat-widget-bg: 0 0% 100%;
+    --chat-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+
+    --gradient-primary: linear-gradient(135deg, hsl(233 84% 58%), hsl(240 100% 80%));
+    --gradient-chat: linear-gradient(135deg, hsl(233 84% 58%), hsl(245 58% 51%));
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
